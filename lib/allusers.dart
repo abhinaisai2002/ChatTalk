@@ -1,5 +1,6 @@
 import 'package:chatting_application/Database_USer.dart';
 import 'package:chatting_application/UserProfile.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class AllUsers extends StatefulWidget {
@@ -24,7 +25,7 @@ class _AllUsersState extends State<AllUsers> {
                   itemCount: s.length,
                   itemBuilder: (context, index) {
                     var data = s[index].data();
-                    return ListTile(
+                    return FirebaseAuth.instance.currentUser.uid != data['id'] ?ListTile(
                       onTap: () {
                         Navigator.push(
                             context,
@@ -45,7 +46,7 @@ class _AllUsersState extends State<AllUsers> {
                         data['about'],
                         style: TextStyle(fontFamily: 'OpenSans', fontSize: 15),
                       ),
-                    );
+                    ):Container();
                   });
             }
             return Center(

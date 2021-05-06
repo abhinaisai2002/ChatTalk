@@ -5,7 +5,6 @@ import 'package:chatting_application/Messagebox.dart';
 import 'package:flutter/material.dart';
 
 class AllMessages extends StatefulWidget {
-  AllMessages() {}
   @override
   _AllMessagesState createState() => _AllMessagesState();
 }

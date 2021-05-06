@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class MessageBox extends StatelessWidget {
-  Map m, n;
+   Map m, n;
   MessageBox(Map a, [Map b = const {'id': 'a'}]) {
     this.m = a;
     this.n = b;
